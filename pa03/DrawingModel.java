@@ -25,19 +25,24 @@ public class DrawingModel {
 	/**
 	  initialize the model so that it contain some shapes
 	*/
+
+	//only needs to change this method
 	private void init(){
 		CircleShape c;
-		for(int i=0; i< circles.length/2; i++){
+		//change circles.length/2 to how many kinds of circles you will create
+		for(int i=0; i< circles.length; i++){
 			// we go to circles.length/2 as we add 2 different kinds of circles
 			// each time through this loop.. with 5 classes you'll divide by 5
 			// WHEN YOU ADD ANOTHER SUBCLASS OF CIRCLESHAPE YOU NEED TO
 			// CREATE IT AND ADD IT TO MODEL
-			c = new CircleShape();
+			//c = new CircleShape();
+			//this.add(c);
+
+      //c = new RadiusChangingCircle();
+      //this.add(c); //add methods record every circle info
+
+			c = new SmallCircles();
 			this.add(c);
-
-      c = new RadiusChangingCircle();
-      this.add(c);
-
 		}
 	}
 
@@ -59,7 +64,7 @@ public class DrawingModel {
 		g.drawRect(0,0,500,500);
 
 		for(int i=0; i<numCircles; i++){
-			CircleShape c = circles[i];
+			CircleShape c = circles[i]; //把add里面的circle画出来
 			c.draw(g);
 		}
 	}
@@ -69,7 +74,7 @@ public class DrawingModel {
 	*/
 	public void update(){
 		for(int i=0; i<numCircles; i++){
-			circles[i].update(speed);
+			circles[i].update(speed); //call update method in CircleShape
 		}
 	}
 }
