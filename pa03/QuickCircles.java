@@ -2,52 +2,43 @@ package pa03;
 
 
 /**
- * QuickCircles are transparent yellow circles which move at a constant velocity
- * on the board and their radius shrink when bounce off the edges
+ * QuickCircles are transparent blue circles which move on the board
+ * The velocity of each circle will change after the circles bounce the wall
 */
 
 public class QuickCircles extends CircleShape{
 
   private double velocity=2.0;
 	/**
-	 * create a small circle and set the color to transparent yellow
+	 * create a circle and set the color to transparent blue
 	 */
   public QuickCircles(){
     super();
-		this.color = new java.awt.Color(0,0,255,100); // transparent yellow
+		this.color = new java.awt.Color(0,0,255,100); // transparent blue
   }
 
    /**
-   * keep the circle on board as usual, but also change the radius and color transparency.
-   * If it bounces the wall, then its radius shrinks to 0.8 of its previous radius, and the
-   * transparency of yellow change.
+   * keep the circle on board as usual, but also change the velocity.
+   * If it bounces the wall, then its velocity will change.
    */
   public void keepOnBoard(){
 
     if (this.x < this.radius) {
       super.keepOnBoard();
-      this.radius=this.radius*0.8;
-      this.velocity=this.velocity*3;
+      this.vx=this.vx*1.5;
 
     }else if (this.x > CircleShape.boardWidth-this.radius) {
       super.keepOnBoard();
-      this.radius=this.radius*0.8;
-      this.velocity=this.velocity*3;
+      this.vx=this.vx*1.5;
     }
 
     if (this.y < this.radius){
       super.keepOnBoard();
-      this.radius=this.radius*0.8;
-      this.velocity=this.velocity*3;
+      this.vy=this.vy*1.7;
 
     } else if (this.y > CircleShape.boardHeight-this.radius) {
       super.keepOnBoard();
-      this.radius=this.radius*0.8;
-      this.velocity=this.velocity*3;
+      this.vy=this.vy*1.7;
     }
   }
-
-
-
-
 }
