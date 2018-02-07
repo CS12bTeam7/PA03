@@ -30,7 +30,7 @@ public class DrawingModel {
 	private void init(){
 		CircleShape c;
 		//change circles.length/2 to how many kinds of circles you will create
-		for(int i=0; i< circles.length/2; i++){
+		for(int i=0; i< circles.length/3; i++){
 			// we go to circles.length/2 as we add 2 different kinds of circles
 			// each time through this loop.. with 5 classes you'll divide by 5
 			// WHEN YOU ADD ANOTHER SUBCLASS OF CIRCLESHAPE YOU NEED TO
@@ -45,6 +45,9 @@ public class DrawingModel {
 			this.add(c);
 
 			c = new QuickCircles();
+			this.add(c);
+
+			c = new Sound();
 			this.add(c);
 		}
 	}
@@ -67,7 +70,7 @@ public class DrawingModel {
 		g.drawRect(0,0,500,500);
 
 		for(int i=0; i<numCircles; i++){
-			CircleShape c = circles[i]; //把add里面的circle画出来
+			CircleShape c = circles[i]; 
 			c.draw(g);
 		}
 	}
