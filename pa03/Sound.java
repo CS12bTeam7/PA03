@@ -4,13 +4,14 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class Sound extends CircleShape{
+	private static File Clap = new File("pa03/2614.wav");
+
 	public Sound(){
     	super();
 		this.color = new java.awt.Color(255,255,255); 
   	}
 	
 	public static void Suv(){
-		File Clap = new File("2614.WAV");
 		PlaySound(Clap);
 	}
 
@@ -21,9 +22,9 @@ public class Sound extends CircleShape{
 			clip.start();
 			Thread.sleep(clip.getMicrosecondLength()/1000);
 		}catch (Exception e){
-
+			System.out.println(e);
 		}
-	}8
+	}
 
 	public void keepOnBoard(){
       if (this.x < this.radius) {
