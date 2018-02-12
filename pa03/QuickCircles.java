@@ -8,7 +8,6 @@ package pa03;
 
 public class QuickCircles extends CircleShape{
 
-  private double velocity=2.0;
 	/**
 	 * create a circle and set the color to transparent blue
 	 */
