@@ -8,6 +8,8 @@ package pa03;
 
 public class QuickCircles extends CircleShape{
 
+  private double speedchange = 1.2;
+
 	/**
 	 * create a circle and set the color to transparent blue
 	 */
@@ -24,20 +26,20 @@ public class QuickCircles extends CircleShape{
 
     if (this.x < this.radius) {
       super.keepOnBoard();
-      this.vx=this.vx*1.5;
+      this.vx=this.vx*speedchange;
 
     }else if (this.x > CircleShape.boardWidth-this.radius) {
       super.keepOnBoard();
-      this.vx=this.vx*1.5;
+      this.vx=this.vx*speedchange;
     }
 
     if (this.y < this.radius){
       super.keepOnBoard();
-      this.vy=this.vy*1.7;
+      this.vy=this.vy*speedchange;
 
     } else if (this.y > CircleShape.boardHeight-this.radius) {
       super.keepOnBoard();
-      this.vy=this.vy*1.7;
+      this.vy=this.vy*speedchange;
     }
   }
 }
